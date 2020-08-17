@@ -38,9 +38,9 @@ class Transfer
       temp_sender =  @receiver   # sets receiver variable to a value 
       @sender = temp_sender      # sets sender to the same value as reciever variable 
       @receiver = temp_receiver  # sets receiver to the same value as sender variable
-      self.execute_transaction
-      if @status == "complete"
-        @status = "reversed"
+      self.execute_transaction   # then executes the transaction using the variables set to these new interacting values 
+      if @status == "complete"   # once status changes to complete at end of self.execute_transaction it is changed again to reversed 
+        @status = "reversed"     
       end
     end
 
