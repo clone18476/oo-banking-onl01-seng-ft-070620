@@ -19,7 +19,7 @@ class Transfer
     if @status != "complete"  # if the status is not complete (if it's pending) it'll pass 
        # binding.pry
       withdrawl_complete = @sender.withdrawl(@amount) # uses withdrawl method defined in BankAccount class 
-      if withdrawl_complete && self.valid?   #    each transfer can only happen once
+      if withdrawl_complete && self.valid?   # each transfer can only happen once
          # binding.pry
         @receiver.deposit(@amount)   # uses deposit method defined in BankAccount class 
         @status = "complete"   # transaction status is complete once it's eexecuted
