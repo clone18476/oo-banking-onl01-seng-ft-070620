@@ -11,7 +11,7 @@ class Transfer
   end
   
   def valid?   # can check that both accounts are valid 
-    @sender.valid? && @receiver.valid?
+    @sender.valid? && @receiver.valid?    # calls on the sender and reciever's #valid? methods
   end 
   
   def execute_transaction    #can execute a successful transaction between two accounts
