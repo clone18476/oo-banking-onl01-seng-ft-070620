@@ -31,8 +31,8 @@ class Transfer
   end
 
   def reverse_transfer   #    can reverse a transfer between two accounts
-    # binding.pry
-    if @status == "complete"     #     it can only reverse executed transfers
+    # binding.pry         #     it can only reverse executed transfers
+    if @status == "complete"    # when reversing transfer change account status from complete back to pending 
       @status = "pending"
       temp_receiver = @sender
       temp_sender =  @receiver
