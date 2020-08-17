@@ -34,10 +34,10 @@ class Transfer
     # binding.pry         #     it can only reverse executed transfers
     if @status == "complete"    # when reversing transfer change account status from complete back to pending 
       @status = "pending"
-      temp_receiver = @sender
-      temp_sender =  @receiver
-      @sender = temp_sender
-      @receiver = temp_receiver
+      temp_receiver = @sender    # sets sender variable to a value
+      temp_sender =  @receiver   # sets receiver variable to a value 
+      @sender = temp_sender      # sets sender to the same value as reciever variable 
+      @receiver = temp_receiver  # 
       self.execute_transaction
       if @status == "complete"
         @status = "reversed"
