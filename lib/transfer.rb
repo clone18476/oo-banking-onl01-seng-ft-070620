@@ -16,7 +16,7 @@ class Transfer
   
   def execute_transaction    #can execute a successful transaction between two accounts
     #binding.pry
-    if @status != "complete"  # if the status is not complete (if it's pending) it will pass 
+    if @status != "complete"  # if the status is not complete (if it's pending) it'll pass 
        # binding.pry
       withdrawl_complete = @sender.withdrawl(@amount) # uses withdrawl method defined in BankAccount class 
       if withdrawl_complete && self.valid?   #    each transfer can only happen once
