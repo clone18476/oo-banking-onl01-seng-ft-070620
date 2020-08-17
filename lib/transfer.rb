@@ -21,8 +21,8 @@ class Transfer
       withdrawl_complete = @sender.withdrawl(@amount) # uses withdrawl method defined in BankAccount class 
       if withdrawl_complete && self.valid?   #    each transfer can only happen once
           binding.pry
-        @receiver.deposit(@amount)
-        @status = "complete"
+        @receiver.deposit(@amount)   # uses deposit method defined in BankAccount class 
+        @status = "complete"   # transaction status is complete once it's eexecuted
       else
         @status = "rejected"   #    rejects a transfer if the sender does not have enough funds (does not have a valid account)
         "Transaction rejected. Please check your account balance."
