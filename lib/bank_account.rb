@@ -25,7 +25,7 @@ class BankAccount
   def close_account     # can close its account 
     @status = "closed"
   end 
-  
+          #everything down is interactng with Transfer class 
   def withdrawl(amount)
     if @status == "open" && @balance >= amount
         @balance -= amount
@@ -33,7 +33,12 @@ class BankAccount
       end
       false
     end  
+  def display_balance
+    "Your balance is $#{@balance}."
+  end 
   
-  
+  def valid?
+    @status == "open" && @balance > 0 
+  end 
   
 end
